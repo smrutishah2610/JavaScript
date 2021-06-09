@@ -17,7 +17,7 @@ and if click on an item display that color
 
 
 ### model project
-[ ] create three model card.
+- [ ] create three model card.
 
 ### question:
 - create array object of question and answer
