@@ -5,10 +5,10 @@ JavaScript Projects &amp; Assignments
 
 ## todo 
 ### color-picker
-- [x] allow user to input text color and save in the array(append)
-- [x] show the list item of array on the page
+- [ ] allow user to input text color and save in the array(append)
+- [ ] show the list item of array on the page
 and if click on an item display that color
-- [x] add a label after color flipper - total event: 5
+- [ ] add a label after color flipper - total event: 5
 
 
 ### reviews
