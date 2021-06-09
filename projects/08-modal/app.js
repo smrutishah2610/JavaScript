@@ -13,3 +13,28 @@ modalBtn.addEventListener('click', function () {
 closeBtn.addEventListener('click', function () {
   modal.classList.remove('open-modal');
 });
+// modal 2
+const modalBtn1 = document.querySelector('.modal-btn1');
+const modal1 = document.querySelector('.modal-overlay1');
+const closeBtn1 = document.querySelector('.close-btn1');
+
+modalBtn1.addEventListener('click', function () {
+  modal1.classList.add('open-modal1');
+});
+
+closeBtn1.addEventListener('click', function () {
+  modal1.classList.remove('open-modal1');
+});
+
+// modal 3
+const modalBtn2 = document.querySelector('.modal-btn2');
+const modal2 = document.querySelector('.modal-overlay2');
+const closeBtn2 = document.querySelector('.close-btn2');
+
+modalBtn2.addEventListener('click', function () {
+  modal2.classList.add('open-modal2');
+});
+
+closeBtn2.addEventListener('click', function () {
+  modal2.classList.remove('open-modal2');
+});

@@ -1,6 +1,7 @@
 # JavaScript
 JavaScript Projects &amp; Assignments
 
+- create html file to display all the project in card format using array object - title, description, link.
 
 ## todo 
 ### color-picker
@@ -13,3 +14,10 @@ and if click on an item display that color
 ### reviews
 - below surprise button display all authors name dynamically & onclick display their review.
 - create a new property in an object "star" from 1 to 5 and display in a card below their job.(static)
+
+
+### model project
+[ ] create three model card.
+
+### question:
+- create array object of question and answer
