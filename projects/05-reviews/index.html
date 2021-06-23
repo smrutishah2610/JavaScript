@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Starter</title>
     <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
-
     <!-- styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -28,6 +28,13 @@
           </div>
           <h4 id="author">sara jones</h4>
           <p id="job">ux designer</p>
+          <p id="star" class="star">
+            <!-- <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span> -->
+          </p>
           <p id="info">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
             asperiores debitis incidunt, eius earum ipsam cupiditate libero?
@@ -44,10 +51,12 @@
           </div>
           <!-- random button -->
           <button class="random-btn">surprise me</button>
+          <div id="author-name"></div>
         </article>
       </section>
     </main>
     <!-- javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

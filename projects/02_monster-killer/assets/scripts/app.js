@@ -11,14 +11,35 @@ const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
 
-const enteredValue = prompt('Maximum life for you and the monster.', '100');
+/* const enteredValue = prompt('Maximum life for you and the monster.', '100');
 
-let chosenMaxLife = parseInt(enteredValue);
+let chosenMaxLife = parseInt(enteredValue);*/
 let battleLog = [];
 let lastLoggedEntry;
 
-if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
+// in this function i use throw
+function getMaxLifeValues() {
+  const enteredValue = prompt('Maximum life for you and the monster.', '100');
+  let parsedValue = parseInt(enteredValue);
+  if (isNaN(parsedValue) || parsedValue <= 0) {
+    throw {
+      message: 'Invalide user input, not a number!'
+    };
+  }
+  return parsedValue;
+}
+
+/* if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
   chosenMaxLife = 100;
+}*/
+
+let chosenMaxLife;
+try {
+  chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+  console.log(error);
+  chosenMaxLife = 100;
+  alert('You entered something wrong, default value of 100 was used.');
 }
 
 let currentMonsterHealth = chosenMaxLife;
@@ -172,9 +193,9 @@ function endRound() {
 function attackMonster(mode) {
   const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
   const logEvent =
-    mode === MODE_ATTACK
-      ? LOG_EVENT_PLAYER_ATTACK
-      : LOG_EVENT_PLAYER_STRONG_ATTACK;
+    mode === MODE_ATTACK ?
+      LOG_EVENT_PLAYER_ATTACK :
+      LOG_EVENT_PLAYER_STRONG_ATTACK;
   // if (mode === MODE_ATTACK) {
   //   maxDamage = ATTACK_VALUE;
   //   logEvent = LOG_EVENT_PLAYER_ATTACK;

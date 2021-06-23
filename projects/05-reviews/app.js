@@ -5,7 +5,10 @@ const reviews = [{
     job: "web developer",
     img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
     text: "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
-    // star: 3.5
+    star: function () {
+      const rate = document.getElementById("star");
+      return rate.innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>`;
+    },
   },
   {
     id: 2,
@@ -13,6 +16,10 @@ const reviews = [{
     job: "web designer",
     img: "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
     text: "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
+    star: function () {
+      const rate = document.getElementById("star");
+      return rate.innerHTML = `<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>`;
+    },
   },
   {
     id: 3,
@@ -34,6 +41,8 @@ const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
+const rating = document.getElementById("star");
+const showAuthorName = document.getElementById("author-name");
 
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
@@ -49,6 +58,7 @@ window.addEventListener("DOMContentLoaded", function () {
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+  rating.innerHTML = item.star;
 });
 
 // show person based on item
@@ -58,6 +68,7 @@ function showPerson(person) {
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+  rating.write = item.star;
 }
 // show next person
 nextBtn.addEventListener("click", function () {
@@ -77,8 +88,20 @@ prevBtn.addEventListener("click", function () {
 });
 // show random person
 randomBtn.addEventListener("click", function () {
-  console.log("hello");
-
   currentItem = Math.floor(Math.random() * reviews.length);
   showPerson(currentItem);
 });
+
+for (let i = 0; i < reviews.length; i++) {
+  $(showAuthorName).append(`<a href = ""><h3 onclick = "findAuthor()">${reviews[i].name}</h3></a>`);
+  // console.log(reviews[i].name);
+}
+
+function findAuthor() {
+  let authorName;
+  if (authorName == reviews[1]) {
+    showPerson(reviews[1]);
+    console.log(currentItem);
+  }
+  console.log(reviews[1]);
+}

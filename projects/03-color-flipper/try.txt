@@ -1,20 +1,23 @@
-var colors = ["green", "red", "rgba(133,122,200)", "#f15025"];
+var colors = [];
 // "green", "red", "rgba(133,122,200)", "#f15025"
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
-const colorName = document.querySelector(".color-names");
 
 btn.addEventListener("click", function () {
   const randomNumber = getRandomNumber();
   // console.log(randomNumber);
   document.body.style.backgroundColor = colors[randomNumber];
   color.textContent = colors[randomNumber];
-  
-  colorName.textContent = colors[randomNumber];
-});
+  });
 
 function getRandomNumber() {
-      return Math.floor(Math.random() * colors.length);
+  while (colors.length < 100) {
+    do {
+      var col = Math.floor((Math.random() * 1000000) + 1);
+    } while (colors.indexOf(col) >= 0);
+    colors.push("#" + ("000000" + col.toString(16)).slice(-6));
+  }
+  console.log(col);
 }
 
 
@@ -23,4 +26,8 @@ function colorPicker() {
   console.log(randomNumber);
   document.body.style.backgroundColor = colors[randomNumber];
   color.textContent = colors[randomNumber];
+}
+function searchcolor() {
+  document.body.style.backgroundColor = colors.find(getRandomNumber);
+  color.textContent = colors.find(getRandomNumber);
 }

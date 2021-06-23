@@ -232,3 +232,15 @@ main {
   color: var(--clr-white);
   background: var(--clr-black);
 }
+
+.search-color {
+  height: 30px;
+  margin-left: 50px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+}
+
+.color-names {
+  font-size: 20px;
+  margin-top: 20px;
+}
